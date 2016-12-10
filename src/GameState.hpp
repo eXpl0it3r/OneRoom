@@ -1,10 +1,10 @@
 #pragma once
 
 #include "State.hpp"
-#include "ExplosionEntity.hpp"
-
+#include "PlayerEntity.hpp"
+#include <Thor/Input/EventSystem.hpp>
 #include <Thor/Resources.hpp>
-
+#include <memory>
 #include <string>
 
 class GameState : public State
@@ -17,8 +17,8 @@ private:
     void update(const sf::Time dt) final;
     void render() final;
 
-    void load_resources();
-
 private:
-    ExplosionEntity m_ent;
+    std::unique_ptr<PlayerEntity> m_player;
+    std::map<std::string, Entity&> m_entities;
+    thor::ActionMap<std::string>::CallbackSystem m_callbacks;
 };

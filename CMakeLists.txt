@@ -34,12 +34,13 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Compile target
 set(SOURCE_FILES
-    src/main.cpp
-    src/Application.cpp
-    src/State.cpp
+        src/main.cpp
+        src/Application.cpp
+        src/State.cpp
         src/GameState.cpp
-    src/Animation.cpp
-        src/ExplosionEntity.cpp src/SharedContext.hpp)
+        src/Animation.cpp
+        src/ExplosionEntity.cpp
+        src/PlayerEntity.cpp)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 # Link libraries
