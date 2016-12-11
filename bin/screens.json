@@ -1,0 +1,128 @@
+{
+  "start": "wardrobe",
+  "screens": {
+    "wardrobe": {
+      "tag": "wardrobe",
+      "name": "Wardrobe",
+      "texture": "screens/wardrobe.png",
+      "actions": {
+        "cupboard":      [  0,   0,  50, 300],
+        "utility-shelf": [346,   0,  50, 300],
+        "case":          [114, 187,  58,  91]
+      }
+    },
+    "cupboard-shelf": {
+      "tag": "cupboard-shelf",
+      "name": "Cupboard Shelf",
+      "texture": "screens/cupboard-shelf.png",
+      "actions": {
+        "shelf":     [  0,  42,  50, 258],
+        "wardrobe":  [346,   0,  50, 300],
+        "corkboard": [  0,   0, 112, 114],
+        "cupboard":  [ 50, 191, 135, 109]
+      }
+    },
+    "cupboard": {
+      "tag": "cupboard",
+      "name": "Cupboard",
+      "texture": "screens/cupboard.png",
+      "actions": {
+        "corkboard": [159,   0, 152,  40],
+        "wardrobe":  [266,  40, 130, 260],
+        "shelf":     [  0,   0, 110, 300]
+      }
+    },
+    "corkboard": {
+      "tag": "corkboard",
+      "name": "Corkboard",
+      "texture": "screens/corkboard.png",
+      "actions": {
+        "cupboard":  [  0, 250, 396,  50]
+      }
+    },
+    "shelf": {
+      "tag": "shelf",
+      "name": "Shelf",
+      "texture": "screens/shelf.png",
+      "actions": {
+        "cupboard": [306,   0,  90, 300],
+        "door":     [  0,   0,  90, 300],
+        "egg":      [175, 198,  52,  58]
+      }
+    },
+    "door": {
+      "tag": "door",
+      "name": "Door",
+      "texture": "screens/door.png",
+      "actions": {
+        "bed":   [  0,   0,  50, 300],
+        "shelf": [346,   0,  50, 300]
+      }
+    },
+    "bed": {
+      "tag": "bed",
+      "name": "Bed",
+      "texture": "screens/bed.png",
+      "actions": {
+        "desk": [  0,   0,  50, 300],
+        "door": [346,   0,  50, 170],
+        "lock": [296, 181,  71,  98]
+      }
+    },
+    "desk": {
+      "tag": "desk",
+      "name": "Desk",
+      "texture": "screens/desk.png",
+      "actions": {
+        "utility-shelf": [  0,   0,  50, 300],
+        "bed":           [346,   0,  50, 170],
+        "computer":      [ 76,  65, 204, 153]
+      }
+    },
+    "utility-shelf": {
+      "tag": "utility-shelf",
+      "name": "Utility Shelf",
+      "texture": "screens/utility-shelf.png",
+      "actions": {
+        "wardrobe": [  0,   0,  90, 300],
+        "desk":     [306,   0,  90, 300],
+        "owl":      [216,  18,  28,  25]
+      }
+    },
+    "owl": {
+      "tag": "owl",
+      "name": "Owl",
+      "texture": "screens/owl.png",
+      "actions": {
+        "utility-shelf": [  0, 233, 396,  67]
+      }
+    },
+    "lock": {
+      "tag": "lock",
+      "name": "Lock",
+      "texture": "screens/lock.png",
+      "actions": {
+        "bed":         [  0,   0, 396,  73],
+        "combination": [ 82, 119, 181,  73]
+      }
+    },
+    "suitcase": {
+      "tag": "suitcase",
+      "name": "Suitcase",
+      "texture": "screens/suitcase.png",
+      "actions": {
+        "bed":  [  0,   0,  61, 300],
+        "key":  [115, 222,  59,  72],
+        "book": [176, 131, 106, 129]
+      }
+    },
+    "case": {
+      "tag": "case",
+      "name": "Case",
+      "texture": "screens/case.png",
+      "actions": {
+        "wardrobe": [306,   0,  90, 300]
+      }
+    }
+  }
+}

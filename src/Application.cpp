@@ -31,13 +31,14 @@ void Application::setup_window()
 
 void Application::load_resources()
 {
-    m_context.textures.acquire("test", thor::Resources::fromFile<sf::Texture>("test.png"));
-    m_context.textures.acquire("player", thor::Resources::fromFile<sf::Texture>("entities/player.png"));
+    m_context.fonts.acquire("font", thor::Resources::fromFile<sf::Font>("battlenet.ttf"));
 }
 
 void Application::map_actions()
 {
     m_context.actionmap["close"] = thor::Action(sf::Event::Closed);
+    m_context.actionmap["click"] = thor::Action(sf::Mouse::Left, thor::Action::ReleaseOnce);
+    m_context.actionmap["hover"] = thor::Action(sf::Event::MouseMoved);
 
     // TODO: Make mapping configurable.
     m_context.actionmap["left"] = thor::Action(sf::Keyboard::Left);

@@ -39,10 +39,8 @@ set(SOURCE_FILES
         src/State.cpp
         src/GameState.cpp
         src/Animation.cpp
-        src/ExplosionEntity.cpp
-        src/PlayerEntity.cpp
-        src/Tile.cpp
-        src/TileMap.cpp)
+        src/Screen.cpp
+        src/Action.cpp)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 # Link libraries
