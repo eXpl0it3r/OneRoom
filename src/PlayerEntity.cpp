@@ -19,6 +19,11 @@ void PlayerEntity::direction(sf::Vector2i direction)
     m_direction = direction;
 }
 
+sf::FloatRect PlayerEntity::getGlobalBounds()
+{
+    return {getPosition(), {m_sprite.getGlobalBounds().width, m_sprite.getGlobalBounds().height}};
+}
+
 void PlayerEntity::update(sf::Time dt)
 {
     m_animator.update(dt);
@@ -28,7 +33,8 @@ void PlayerEntity::update(sf::Time dt)
 
 void PlayerEntity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    target.draw(m_sprite, getTransform());
+    states.transform *= getTransform();
+    target.draw(m_sprite, states);
 }
 
 void PlayerEntity::connect(thor::ActionMap<std::string>::CallbackSystem& callback_system)

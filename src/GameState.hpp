@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.hpp"
+#include "TileMap.hpp"
 #include "PlayerEntity.hpp"
 #include <Thor/Input/EventSystem.hpp>
 #include <Thor/Resources.hpp>
@@ -21,4 +22,6 @@ private:
     std::unique_ptr<PlayerEntity> m_player;
     std::map<std::string, Entity&> m_entities;
     thor::ActionMap<std::string>::CallbackSystem m_callbacks;
+
+    TileMap m_tilemap;
 };

@@ -14,6 +14,8 @@ public:
 
     void direction(sf::Vector2i direction);
 
+    sf::FloatRect getGlobalBounds();
+
     void update(sf::Time dt) final;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
 

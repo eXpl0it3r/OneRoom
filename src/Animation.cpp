@@ -10,7 +10,6 @@ Animation::Animation(const std::string& filename)
     parse(filename);
 }
 
-// TODO: Missing error handling regarding JSON
 void Animation::parse(const std::string& filename)
 {
     nlohmann::json animations;

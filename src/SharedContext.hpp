@@ -8,7 +8,7 @@
 
 struct SharedContext
 {
-    sf::RenderWindow window = {{1280, 720}, "One Room", sf::Style::Titlebar | sf::Style::Close, sf::ContextSettings{0, 0, 8}};
+    sf::RenderWindow window = {{1280, 704}, "One Room", sf::Style::Titlebar | sf::Style::Close, sf::ContextSettings{0, 0, 8}};
     thor::ResourceHolder<sf::Texture, std::string> textures;
     thor::ResourceHolder<sf::Font, std::string> fonts;
     thor::ActionMap<std::string> actionmap;
