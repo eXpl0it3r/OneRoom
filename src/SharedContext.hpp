@@ -16,4 +16,6 @@ struct SharedContext
     thor::ActionMap<std::string> actionmap;
     std::shared_ptr<Screen> current_room = nullptr;
     std::vector<int> lock_combination = {2, 7, 6};
+    bool key = false;
+    bool combination = false;
 };

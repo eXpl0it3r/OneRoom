@@ -33,7 +33,11 @@
       "name": "Corkboard",
       "texture": "screens/corkboard.png",
       "actions": {
-        "cupboard":  [  0, 250, 396,  50]
+        "cupboard":                                    [  0, 250, 396,  50],
+        "A postcard of the best country: Switzerland": [162, 186, 105,  69],
+        "So many people getting married":              [ 37, 104,  78,  52],
+        "A postcard from my last vacations":           [280,  92,  78,  52],
+        "The policy of the local club":                [166,  23,  96, 145]
       }
     },
     "shelf": {
@@ -49,8 +53,9 @@
       "name": "Door",
       "texture": "screens/door.png",
       "actions": {
-        "bed":   [  0,   0,  50, 300],
-        "shelf": [346,   0,  50, 300]
+        "bed":        [  0,   0,  50, 300],
+        "shelf":      [346,   0,  50, 300],
+        "Leave Room": [247, 186,  35,  54]
       }
     },
     "bed": {
@@ -67,8 +72,8 @@
       "texture": "screens/desk.png",
       "actions": {
         "utility-shelf": [  0,   0,  50, 300],
-        "bed":           [346,   0,  50, 170],
-        "computer":      [ 76,  65, 204, 153]
+        "bed":           [346,   0,  50, 300],
+        "This is a Computer":      [ 76,  65, 204, 153]
       }
     },
     "utility-shelf": {
@@ -84,7 +89,8 @@
       "name": "Owl",
       "texture": "screens/owl.png",
       "actions": {
-        "utility-shelf": [  0, 233, 396,  67]
+        "utility-shelf": [  0, 233, 396,  67],
+        "OvO":           [102,  56, 218, 218]
       }
     },
     "lock": {
@@ -99,9 +105,9 @@
       "name": "Suitcase",
       "texture": "screens/suitcase.png",
       "actions": {
-        "bed":  [  0,   0,  61, 300],
-        "key":  [115, 222,  59,  72],
-        "book": [176, 131, 106, 129]
+        "bed":              [  0,   0,  61, 300],
+        "Pick up the Key":  [115, 222,  59,  72],
+        "Look at the Book": [176, 131, 106, 129]
       }
     },
     "case": {
@@ -123,7 +129,8 @@
       "name": "Open the Egg",
       "texture": "screens/egg-open.png",
       "actions": {
-        "shelf": [  0, 250, 396,  50]
+        "shelf":            [  0, 250, 396,  50],
+        "Pick up the Note": [ 38,  46, 170,  62]
       }
     }
   }

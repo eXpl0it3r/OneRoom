@@ -24,16 +24,22 @@ private:
     void reset_combination();
     void add_combination(int i);
     bool check_combination();
+    void change_info(const std::string& info);
 
 private:
     std::map<std::string, std::shared_ptr<Screen>> m_screens;
     thor::ActionMap<std::string>::CallbackSystem m_callbacks;
-    std::shared_ptr<Screen> m_next;
+    std::shared_ptr<Screen> m_next_screen;
 
     sf::Text m_action;
+    sf::Text m_info;
+    sf::Clock m_info_clock;
 
     std::vector<int> m_lock;
     sf::Text m_digit0;
     sf::Text m_digit1;
     sf::Text m_digit2;
+
+    sf::Sprite m_key;
+    sf::Sprite m_combination;
 };

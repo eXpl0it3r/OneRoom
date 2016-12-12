@@ -32,6 +32,8 @@ void Application::setup_window()
 void Application::load_resources()
 {
     m_context.fonts.acquire("font", thor::Resources::fromFile<sf::Font>("battlenet.ttf"));
+    m_context.textures.acquire("key", thor::Resources::fromFile<sf::Texture>("key.png"));
+    m_context.textures.acquire("combination", thor::Resources::fromFile<sf::Texture>("combination.png"));
 }
 
 void Application::map_actions()

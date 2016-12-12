@@ -8,13 +8,19 @@
 GameState::GameState(SharedContext& context)
 : State{context}
 , m_action{"", context.fonts["font"], 16}
+, m_info{"", context.fonts["font"], 16}
 , m_lock{10, 10, 10}
 , m_digit0{" ", context.fonts["font"], 28}
 , m_digit1{" ", context.fonts["font"], 28}
 , m_digit2{" ", context.fonts["font"], 28}
+, m_key{context.textures["key"]}
+, m_combination{context.textures["combination"]}
 {
     load_rooms("screens.json");
-    m_action.setPosition({std::round((m_context.window.getSize().x / 2.f) + 0.5f), 305.f});
+
+    m_action.setPosition({std::round((m_context.window.getSize().x / 2.f) + 0.5f), 300.f});
+    m_info.setPosition({std::round((m_context.window.getSize().x / 2.f) + 0.5f), 320.f});
+    m_info.setFillColor(sf::Color{254, 200, 200});
 
     m_digit0.setPosition({172.f, 129.f});
     m_digit0.setFillColor(sf::Color::Black);
@@ -22,6 +28,9 @@ GameState::GameState(SharedContext& context)
     m_digit1.setFillColor(sf::Color::Black);
     m_digit2.setPosition({240.f, 129.f});
     m_digit2.setFillColor(sf::Color::Black);
+
+    m_key.setPosition({5.f, 347.f});
+    m_combination.setPosition({58.f, 347.f});
 }
 
 void GameState::process_events()
@@ -70,10 +79,10 @@ void GameState::process_events()
 
 void GameState::update(const sf::Time dt)
 {
-    if(m_next != nullptr)
+    if(m_next_screen != nullptr)
     {
-        m_context.current_room = m_next;
-        m_next = nullptr;
+        m_context.current_room = m_next_screen;
+        m_next_screen = nullptr;
     }
 
     process_events();
@@ -81,7 +90,7 @@ void GameState::update(const sf::Time dt)
     if(check_combination())
     {
         // Change screen if the combination is correct.
-        m_next = m_screens["suitcase"];
+        m_next_screen = m_screens["suitcase"];
         reset_combination();
     }
     else if(m_context.current_room != nullptr)
@@ -113,7 +122,16 @@ void GameState::render()
         m_context.window.draw(m_digit2);
     }
 
+    if(m_context.key)
+        m_context.window.draw(m_key);
+
+    if(m_context.combination)
+        m_context.window.draw(m_combination);
+
     m_context.window.draw(m_action);
+
+    if(m_info_clock.getElapsedTime() <= sf::seconds(5.f))
+        m_context.window.draw(m_info);
 
     m_context.window.display();
 }
@@ -164,7 +182,9 @@ void GameState::change_action(const std::string& action)
     std::string action_text = action;
 
     if(m_screens[action] != nullptr)
+    {
         action_text = m_screens[action]->name();
+    }
 
     m_action.setString(action_text);
     m_action.setOrigin({std::round((m_action.getGlobalBounds().width / 2.f) + 0.5f), 0.f});
@@ -180,7 +200,23 @@ void GameState::change_screen(const std::string& action)
     }
     else
     {
-        action;
+        if(action == "Pick up the Key")
+        {
+            m_context.key = true;
+            change_info("You found a key!");
+        }
+        else if(action == "Pick up the Note")
+        {
+            m_context.combination = true;
+            change_info("You found some sort of a combination!");
+        }
+        else if(action == "Leave Room")
+        {
+            if(!m_context.key)
+                change_info("The door is locked!");
+            else
+                change_info("YOU WIN!");
+        }
     }
 }
 
@@ -215,4 +251,11 @@ bool GameState::check_combination()
 void GameState::reset_combination()
 {
     m_lock = {10, 10, 10};
+}
+
+void GameState::change_info(const std::string& info)
+{
+    m_info.setString(info);
+    m_info.setOrigin({std::round((m_info.getGlobalBounds().width / 2.f) + 0.5f), 0.f});
+    m_info_clock.restart();
 }
