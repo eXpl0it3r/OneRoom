@@ -1,8 +1,7 @@
 {
-  "start": "wardrobe",
+  "start": "desk",
   "screens": {
     "wardrobe": {
-      "tag": "wardrobe",
       "name": "Wardrobe",
       "texture": "screens/wardrobe.png",
       "actions": {
@@ -12,7 +11,6 @@
       }
     },
     "cupboard-shelf": {
-      "tag": "cupboard-shelf",
       "name": "Cupboard Shelf",
       "texture": "screens/cupboard-shelf.png",
       "actions": {
@@ -23,7 +21,6 @@
       }
     },
     "cupboard": {
-      "tag": "cupboard",
       "name": "Cupboard",
       "texture": "screens/cupboard.png",
       "actions": {
@@ -33,7 +30,6 @@
       }
     },
     "corkboard": {
-      "tag": "corkboard",
       "name": "Corkboard",
       "texture": "screens/corkboard.png",
       "actions": {
@@ -41,17 +37,15 @@
       }
     },
     "shelf": {
-      "tag": "shelf",
-      "name": "Shelf",
+      "name": "Book Shelf",
       "texture": "screens/shelf.png",
       "actions": {
         "cupboard": [306,   0,  90, 300],
         "door":     [  0,   0,  90, 300],
-        "egg":      [175, 198,  52,  58]
+        "egg":      [191, 215,  17,  27]
       }
     },
     "door": {
-      "tag": "door",
       "name": "Door",
       "texture": "screens/door.png",
       "actions": {
@@ -60,7 +54,6 @@
       }
     },
     "bed": {
-      "tag": "bed",
       "name": "Bed",
       "texture": "screens/bed.png",
       "actions": {
@@ -70,7 +63,6 @@
       }
     },
     "desk": {
-      "tag": "desk",
       "name": "Desk",
       "texture": "screens/desk.png",
       "actions": {
@@ -80,7 +72,6 @@
       }
     },
     "utility-shelf": {
-      "tag": "utility-shelf",
       "name": "Utility Shelf",
       "texture": "screens/utility-shelf.png",
       "actions": {
@@ -90,7 +81,6 @@
       }
     },
     "owl": {
-      "tag": "owl",
       "name": "Owl",
       "texture": "screens/owl.png",
       "actions": {
@@ -98,16 +88,14 @@
       }
     },
     "lock": {
-      "tag": "lock",
       "name": "Lock",
       "texture": "screens/lock.png",
       "actions": {
-        "bed":         [  0,   0, 396,  73],
-        "combination": [ 82, 119, 181,  73]
+        "bed":                   [  0,   0, 396,  73],
+        "Enter the Combination": [ 82, 119, 181,  73]
       }
     },
     "suitcase": {
-      "tag": "suitcase",
       "name": "Suitcase",
       "texture": "screens/suitcase.png",
       "actions": {
@@ -117,11 +105,25 @@
       }
     },
     "case": {
-      "tag": "case",
       "name": "Case",
       "texture": "screens/case.png",
       "actions": {
         "wardrobe": [306,   0,  90, 300]
+      }
+    },
+    "egg": {
+      "name": "Egg",
+      "texture": "screens/egg-closed.png",
+      "actions": {
+        "shelf":    [  0, 250, 396,  50],
+        "egg-open": [ 40,  42, 314, 209]
+      }
+    },
+    "egg-open": {
+      "name": "Open the Egg",
+      "texture": "screens/egg-open.png",
+      "actions": {
+        "shelf": [  0, 250, 396,  50]
       }
     }
   }

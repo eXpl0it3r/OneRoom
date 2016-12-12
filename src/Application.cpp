@@ -40,13 +40,24 @@ void Application::map_actions()
     m_context.actionmap["click"] = thor::Action(sf::Mouse::Left, thor::Action::ReleaseOnce);
     m_context.actionmap["hover"] = thor::Action(sf::Event::MouseMoved);
 
-    // TODO: Make mapping configurable.
-    m_context.actionmap["left"] = thor::Action(sf::Keyboard::Left);
-    m_context.actionmap["left_released"] = thor::Action(sf::Keyboard::Left, thor::Action::ReleaseOnce);
-    m_context.actionmap["right"] = thor::Action(sf::Keyboard::Right);
-    m_context.actionmap["right_released"] = thor::Action(sf::Keyboard::Right, thor::Action::ReleaseOnce);
-    m_context.actionmap["up"] = thor::Action(sf::Keyboard::Up);
-    m_context.actionmap["up_released"] = thor::Action(sf::Keyboard::Up, thor::Action::ReleaseOnce);
-    m_context.actionmap["down"] = thor::Action(sf::Keyboard::Down);
-    m_context.actionmap["down_released"] = thor::Action(sf::Keyboard::Down, thor::Action::ReleaseOnce);
+    m_context.actionmap["0"] = thor::Action(sf::Keyboard::Num0, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad0, thor::Action::ReleaseOnce);
+    m_context.actionmap["1"] = thor::Action(sf::Keyboard::Num1, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad1, thor::Action::ReleaseOnce);
+    m_context.actionmap["2"] = thor::Action(sf::Keyboard::Num2, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad2, thor::Action::ReleaseOnce);
+    m_context.actionmap["3"] = thor::Action(sf::Keyboard::Num3, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad3, thor::Action::ReleaseOnce);
+    m_context.actionmap["4"] = thor::Action(sf::Keyboard::Num4, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad4, thor::Action::ReleaseOnce);
+    m_context.actionmap["5"] = thor::Action(sf::Keyboard::Num5, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad5, thor::Action::ReleaseOnce);
+    m_context.actionmap["6"] = thor::Action(sf::Keyboard::Num6, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad6, thor::Action::ReleaseOnce);
+    m_context.actionmap["7"] = thor::Action(sf::Keyboard::Num7, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad7, thor::Action::ReleaseOnce);
+    m_context.actionmap["8"] = thor::Action(sf::Keyboard::Num8, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad8, thor::Action::ReleaseOnce);
+    m_context.actionmap["9"] = thor::Action(sf::Keyboard::Num9, thor::Action::ReleaseOnce)
+                               || thor::Action(sf::Keyboard::Numpad9, thor::Action::ReleaseOnce);
 }

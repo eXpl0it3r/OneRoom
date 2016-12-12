@@ -49,6 +49,11 @@ void Screen::on_hover(sf::Vector2i position)
     }
 }
 
+std::string Screen::name()
+{
+    return m_name;
+}
+
 std::string Screen::action()
 {
     std::string action = m_action;

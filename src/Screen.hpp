@@ -17,6 +17,7 @@ public:
     void on_click(sf::Vector2i position);
     void on_hover(sf::Vector2i position);
 
+    std::string name();
     std::string action();
     std::string hovering();
 
