@@ -1,26 +1,17 @@
 #include "Screen.hpp"
 
-Screen::Screen(const std::string& name, const sf::Texture& texture, std::vector<Action>&& actions)
-: m_name{name}
+Screen::Screen(const std::string& tag, const std::string& name, const sf::Texture& texture, std::vector<Action>&& actions)
+: m_tag{tag}
+, m_name{name}
 , m_sprite{texture}
 , m_actions{std::forward<std::vector<Action>>(actions)}
 {
-}
-
-void Screen::update(sf::Time dt)
-{
-
 }
 
 void Screen::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     states.transform *= getTransform();
     target.draw(m_sprite, states);
-}
-
-void Screen::connect(thor::ActionMap<std::string>::CallbackSystem& callback_system)
-{
-    //callback_system.connect("click", &WardrobeScreen::check_action);
 }
 
 void Screen::on_click(sf::Vector2i position)
@@ -49,7 +40,12 @@ void Screen::on_hover(sf::Vector2i position)
     }
 }
 
-std::string Screen::name()
+std::string Screen::tag() const
+{
+    return m_tag;
+}
+
+std::string Screen::name() const
 {
     return m_name;
 }
